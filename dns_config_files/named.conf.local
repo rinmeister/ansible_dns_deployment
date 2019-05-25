@@ -1,0 +1,17 @@
+// jinja2 template version 1.0 for BIND9
+
+zone "example.org" {
+        type master;
+        file "/etc/bind/for.example.org.org";
+ };
+zone "0.10.10.in-addr.arpa" {
+        type master;
+        file "/etc/bind/rev0.example.org.org";
+
+ };
+ zone "1.10.10.in-addr.arpa" {
+        type master;
+        file "/etc/bind/rev1.example.org.org";
+
+ };
+ 

@@ -1,0 +1,24 @@
+$TTL 3600
+@   IN  SOA         {{ options.zone_name }}. root.{{ options.zone_name }}. (
+        2019032301  ;Serial
+        3600        ;Refresh
+        1800        ;Retry
+        604800      ;Expire
+        300         ;Minimum TTL
+        )
+; DNS Servers
+{% for item in options.dnsservers %}
+{% for key, value in item.items() %}
+@       IN      NS      {{ value }}
+{% endfor %}
+{% endfor %}
+
+
+; PTR records
+{% for record in options.arecords %}
+{% for key, value in record.items() %}
+{% if value | regex_replace('^([0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3})\.[0-9]{1,3}$', '\\1') == "10.10." + item | regex_replace('^([0-9]{1,3})\.[0-9]{1,3}\.[0-9]{1,3}$', '\\1') %}
+{{ value | regex_replace('^[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.([0-9]{1,3})$', '\\1') }}    IN  PTR     {{ key }}.{{ options.zone_name }}
+{% endif %}
+{% endfor %}
+{% endfor %}
