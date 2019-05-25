@@ -1,4 +1,11 @@
-= DNS server installation on Ubuntu Server
+= Ansible playbook to install BIND on Ubuntu Server
+
+The playbook will perform the installation tasks described below. 
+Rename the .example playbook to .yaml and edit the file with your host value. 
+You will need ssh access to the ubuntu server. The sudo password has to be given in the vars/dns_vars.yaml file.
+Rename this file also from .example to .yaml. +
+
+== DNS server installation on Ubuntu Server
 
 * sudo apt-get update
 * sudo apt-get upgrade
