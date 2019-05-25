@@ -5,6 +5,9 @@ Rename the .example playbook to .yaml and edit the file with your host value.
 You will need ssh access to the ubuntu server. The sudo password has to be given in the vars/dns_vars.yaml file.
 Rename this file also from .example to .yaml. +
 
+Examples of output BIND config files can be found in dns_config_files. Generated files wil also be placed in this
+directory and copied to the destination BIND server.
+
 == DNS server installation on Ubuntu Server
 
 * sudo apt-get update
