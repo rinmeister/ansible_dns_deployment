@@ -1,0 +1,28 @@
+$TTL 3600
+@   IN  SOA     example.org. root.example.org. (
+        2019032301  ;Serial
+        3600        ;Refresh    
+        1800        ;Retry
+        604800      ;Expire
+        300         ;Minimum TTL
+)
+; DNS Servers
+@       IN      NS      ns1.example.org.
+; MX Records
+    IN      MX 10   mx.example.org.
+    IN      MX 20   relay.example.org
+
+; A records
+@   	IN	    A	    1.2.3.4
+localhost   	IN	    A	    127.0.0.1
+ns1   	IN	    A	    1.1.1.1
+mx   	IN	    A	    2.2.2.2
+mail   	IN	    A	    
+
+; AAAA records
+@   	IN	    AAAA    ::1
+www   	IN	    AAAA    ::1
+
+; Aliases
+webmail       IN      CNAME   example.org.
+imaps       IN      CNAME   example.org.

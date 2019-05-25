@@ -1,0 +1,28 @@
+domain: example.org
+dns_name: ns1
+options:
+    lan_subnet: 10.0.0.0/16
+    dns_server: 1.2.3.4
+    zone_name: example.org
+    ptr_subnets:
+        - 0.10.10
+        - 1.10.10
+    arecords:
+        - '@': 1.2.3.4
+        - localhost: 127.0.0.1
+        - ns1: 1.1.1.1
+        - mx: 2.2.2.2
+        - mail: 
+    aaaarecords:
+        - '@': ::1
+        - www: ::1
+    cnames:
+        - webmail: example.org. 
+        - imaps: example.org.
+    mxrecords:
+        - 'MX 10': mx.example.org.
+        - 'MX 20': relay.example.org
+    dnsservers:
+        - '@NS': ns1.example.org.
+ansible_become_pass: password
+
