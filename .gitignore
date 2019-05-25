@@ -2,4 +2,6 @@
 !/vars/*.example
 /dns_config_files/*
 !/dns_config_files/*.example
+*.swp
+*.retry
 
