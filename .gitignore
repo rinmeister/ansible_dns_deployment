@@ -1,5 +1,2 @@
-dns_config_files/ 
-vars/ 
-*.retry
-*.swp
-*.example
+/*
+!/vars
