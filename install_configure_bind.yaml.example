@@ -1,7 +1,7 @@
 ---
 - name: install and configure bind9 on Ubuntu server 18.04
   hosts: 
-    10.10.1.13
+    1.2.3.4 
   vars_files:
       - vars/dns_vars.yaml
   tasks:

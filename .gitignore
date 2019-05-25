@@ -4,4 +4,5 @@
 !/dns_config_files/*.example
 *.swp
 *.retry
+*.yaml
 
